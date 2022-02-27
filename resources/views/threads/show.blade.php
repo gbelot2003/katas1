@@ -16,9 +16,11 @@
     <div class="row justify-content-center">
         <div class="card">
             @foreach ($thread->replies as $reply)
-                <div class="card-header">{{ $reply->created_at->diffForHumans() }}</div>
+                <div class="card-header">
+                    <strong><a href="#">{{ $reply->owner->name }}</a> said</strong>
+                     {{ $reply->created_at->diffForHumans() }}</div>
                 <div class="card-body">
-                    <strong>{{ $reply->owner->name }} said</strong>
+
                     {{ $reply->body }}
                 </div>
                 <hr />
