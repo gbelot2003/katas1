@@ -9,7 +9,9 @@
             <div class="card-body">
                 @foreach ($threads as $row)
                  <article>
-                    <h4>{{ $row->title }}</h4>
+                    <h4>
+                        <a href="{{ $row->path() }}">{{ $row->title }}</a>
+                    </h4>
                     <div class="body">{{ $row->body }}</div>
                  </article>
                  <hr/>
